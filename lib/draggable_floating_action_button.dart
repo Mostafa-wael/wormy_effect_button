@@ -21,6 +21,9 @@ class DraggableFloatingActionButton extends StatefulWidget {
   /// indicates whether the button will return back to its initial offset or not
   final bool holdPosition;
 
+  /// hide the underlying widgets in the static condition
+  final bool hideUnderlying;
+
   // ignore: use_key_in_widget_constructors
   const DraggableFloatingActionButton({
     Key? key,
@@ -28,6 +31,7 @@ class DraggableFloatingActionButton extends StatefulWidget {
     this.motionDelay = 200,
     this.curve = Curves.fastLinearToSlowEaseIn,
     this.holdPosition = false,
+    this.hideUnderlying = true,
     required this.children,
     required this.onPressed,
   });
@@ -63,7 +67,6 @@ class _DraggableFloatingActionButtonState
             MediaQuery.of(context).size.height -
                 padding.bottom -
                 kToolbarHeight);
-        print(_maxOffset);
       });
     } catch (e) {}
   }
@@ -109,7 +112,6 @@ class _DraggableFloatingActionButtonState
                   i * widget.motionDelay + i * widget.motionDelay * 2),
           child: Listener(
             onPointerMove: (PointerEvent details) {
-              print(_offset);
               _updatePosition(details);
               setState(() {
                 _isDragging = true;
@@ -129,10 +131,20 @@ class _DraggableFloatingActionButtonState
                 widget.onPressed();
               }
             },
-            child: Container(
+            child: Visibility(
               /// the key is the widget order
               key: ValueKey(i),
               child: widget.children[i],
+              maintainSize: true,
+              maintainAnimation: true,
+              maintainState: true,
+              // TODO: need to be more realistic
+              visible: !widget.hideUnderlying
+                  ? true
+                  : (i == 0 // the top widget
+                      || // if we are not holding positions, show me unless I reach the initial position
+                      (!widget.holdPosition &&
+                          _offset != widget.initialOffset)),
             ),
           ),
         ),
