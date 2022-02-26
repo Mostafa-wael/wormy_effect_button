@@ -19,6 +19,27 @@ dependencies:
 
 ```dart
 import 'package:draggable_floating_action_button/draggable_floating_action_button.dart';
+DraggableFloatingActionButton(
+        onPressed: _incrementCounter,
+        children: [
+          Container(
+            width: 50,
+            height: 50,
+            child: const Icon(Icons.camera),
+            decoration:
+                const BoxDecoration(color: Colors.blue, shape: BoxShape.circle),
+          ),
+          Container(
+            width: 50,
+            height: 50,
+            child: const Icon(Icons.camera),
+            decoration:
+                const BoxDecoration(color: Colors.red, shape: BoxShape.circle),
+          ),
+        ],
+        delayBias: 200,
+      ),
+    );
 ```
 
 ## Additional information
