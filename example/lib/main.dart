@@ -83,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 color: Colors.green, shape: BoxShape.circle),
           ),
         ],
-        delayBias: 200,
+        motionDelay: 200,
       ),
     );
   }
