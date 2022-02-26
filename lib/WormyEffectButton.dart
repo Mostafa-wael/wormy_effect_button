@@ -1,8 +1,8 @@
-library draggable_floating_action_button;
+library wormy_effect_button;
 
 import 'package:flutter/material.dart';
 
-class DraggableFloatingActionButton extends StatefulWidget {
+class WormyEffectButton extends StatefulWidget {
   /// the underlying widgets that will be animated
   final List<Widget> children;
 
@@ -25,23 +25,22 @@ class DraggableFloatingActionButton extends StatefulWidget {
   final bool hideUnderlying;
 
   // ignore: use_key_in_widget_constructors
-  const DraggableFloatingActionButton({
+  const WormyEffectButton({
     Key? key,
     this.initialOffset = const Offset(340, 610),
     this.motionDelay = 200,
     this.curve = Curves.fastLinearToSlowEaseIn,
     this.holdPosition = false,
-    this.hideUnderlying = true,
+    this.hideUnderlying = false,
     required this.children,
     required this.onPressed,
   });
 
   @override
-  State<StatefulWidget> createState() => _DraggableFloatingActionButtonState();
+  State<StatefulWidget> createState() => _WormyEffectButtonState();
 }
 
-class _DraggableFloatingActionButtonState
-    extends State<DraggableFloatingActionButton> {
+class _WormyEffectButtonState extends State<WormyEffectButton> {
   bool _isDragging = false;
   late Offset _offset;
   late Offset _minOffset;

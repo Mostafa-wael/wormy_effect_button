@@ -1,7 +1,7 @@
-name: draggable_floating_action_button
+name: wormy_effect_button
 description: A new Flutter package project.
 version: 0.0.1
-homepage: https://github.com/Mostafa-wael/draggable_floating_action_button
+homepage: https://github.com/Mostafa-wael/wormy_effect_button
 
 environment:
   sdk: ">=2.16.1 <3.0.0"

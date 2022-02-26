@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:draggable_floating_action_button/draggable_floating_action_button.dart';
+import 'package:wormy_effect_button/wormy_effect_button.dart';
 
 void main() {
   test('adds one to input values', () {

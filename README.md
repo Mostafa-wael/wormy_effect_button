@@ -6,20 +6,20 @@
 
 ## Features
 
-This Package helps you to create draggable widgets with worm effect
+This Package helps you to create draggable widgets with wormy effect
 
 ## Getting started
 
 You should ensure that you add the dependency in your flutter project.
 ```yaml
 dependencies:
-  draggable_floating_action_button: "^0.0.1"
+  wormy_effect_button: "^0.0.1"
 ```
 ## Usage
 
 ```dart
-import 'package:draggable_floating_action_button/draggable_floating_action_button.dart';
-DraggableFloatingActionButton(
+import 'package:wormy_effect_button/wormy_effect_button.dart';
+WormyEffectButton(
         onPressed: _incrementCounter,
         initialOffset: const Offset(340, 610),
         holdPosition: false,

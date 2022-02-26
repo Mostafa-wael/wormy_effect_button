@@ -1,5 +1,5 @@
-import 'package:draggable_floating_action_button/draggable_floating_action_button.dart';
 import 'package:flutter/material.dart';
+import 'package:wormy_effect_button/WormyEffectButton.dart';
 
 void main() {
   runApp(const MyApp());
@@ -58,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: DraggableFloatingActionButton(
+      floatingActionButton: WormyEffectButton(
         onPressed: _incrementCounter,
         initialOffset: const Offset(340, 610),
         holdPosition: false,
