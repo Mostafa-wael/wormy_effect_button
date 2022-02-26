@@ -21,6 +21,10 @@ dependencies:
 import 'package:draggable_floating_action_button/draggable_floating_action_button.dart';
 DraggableFloatingActionButton(
         onPressed: _incrementCounter,
+        initialOffset: const Offset(340, 610),
+        holdPosition: false,
+        curve: Curves.fastLinearToSlowEaseIn,
+        motionDelay: 400,
         children: [
           Container(
             width: 50,
@@ -37,7 +41,6 @@ DraggableFloatingActionButton(
                 const BoxDecoration(color: Colors.red, shape: BoxShape.circle),
           ),
         ],
-        delayBias: 200,
       ),
     );
 ```

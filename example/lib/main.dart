@@ -60,6 +60,10 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: DraggableFloatingActionButton(
         onPressed: _incrementCounter,
+        initialOffset: const Offset(340, 610),
+        holdPosition: false,
+        curve: Curves.fastLinearToSlowEaseIn,
+        motionDelay: 400,
         children: [
           Container(
             width: 50,
@@ -80,10 +84,23 @@ class _MyHomePageState extends State<MyHomePage> {
             height: 50,
             child: const Icon(Icons.camera),
             decoration: const BoxDecoration(
+                color: Colors.orange, shape: BoxShape.circle),
+          ),
+          Container(
+            width: 50,
+            height: 50,
+            child: const Icon(Icons.camera),
+            decoration: const BoxDecoration(
                 color: Colors.green, shape: BoxShape.circle),
           ),
+          Container(
+            width: 50,
+            height: 50,
+            child: const Icon(Icons.camera),
+            decoration: const BoxDecoration(
+                color: Colors.purple, shape: BoxShape.circle),
+          ),
         ],
-        motionDelay: 200,
       ),
     );
   }

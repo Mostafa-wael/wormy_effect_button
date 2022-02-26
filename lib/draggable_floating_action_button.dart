@@ -15,11 +15,19 @@ class DraggableFloatingActionButton extends StatefulWidget {
   /// the delay between the movement of the underlying widgets
   final int motionDelay;
 
+  /// the way that the widgets animates`
+  final Curve curve;
+
+  /// indicates whether the button will return back to its initial offset or not
+  final bool holdPosition;
+
   // ignore: use_key_in_widget_constructors
   const DraggableFloatingActionButton({
     Key? key,
     this.initialOffset = const Offset(340, 610),
     this.motionDelay = 200,
+    this.curve = Curves.fastLinearToSlowEaseIn,
+    this.holdPosition = false,
     required this.children,
     required this.onPressed,
   });
@@ -48,9 +56,14 @@ class _DraggableFloatingActionButtonState
   void _setBoundary(_) {
     try {
       setState(() {
-        _minOffset = const Offset(0, 0);
-        _maxOffset = Offset(MediaQuery.of(context).size.width,
-            MediaQuery.of(context).size.height);
+        var padding = MediaQuery.of(context).viewPadding;
+        _minOffset = Offset(padding.left, padding.top + kToolbarHeight);
+        _maxOffset = Offset(
+            MediaQuery.of(context).size.width * 0.9 - padding.right,
+            MediaQuery.of(context).size.height -
+                padding.bottom -
+                kToolbarHeight);
+        print(_maxOffset);
       });
     } catch (e) {}
   }
@@ -88,7 +101,7 @@ class _DraggableFloatingActionButtonState
     for (var i = len - 1; i >= 0; i--) {
       children.add(
         AnimatedPositioned(
-          curve: Curves.fastLinearToSlowEaseIn,
+          curve: widget.curve,
           left: _offset.dx,
           top: _offset.dy,
           duration: Duration(
@@ -96,6 +109,7 @@ class _DraggableFloatingActionButtonState
                   i * widget.motionDelay + i * widget.motionDelay * 2),
           child: Listener(
             onPointerMove: (PointerEvent details) {
+              print(_offset);
               _updatePosition(details);
               setState(() {
                 _isDragging = true;
@@ -106,7 +120,8 @@ class _DraggableFloatingActionButtonState
                 setState(() {
                   /// return to the origin
                   _isDragging = false;
-                  _offset = widget.initialOffset;
+                  _offset =
+                      widget.holdPosition ? _offset : widget.initialOffset;
                 });
               } else if (i == 0) {
                 /// the button was clicked not dragged
