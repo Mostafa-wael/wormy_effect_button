@@ -62,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: _incrementCounter,
         initialOffset: const Offset(340, 610),
         holdPosition: false,
-        hideUnderlying: true,
+        hideUnderlying: false,
         curve: Curves.fastLinearToSlowEaseIn,
         motionDelay: 400,
         children: [
@@ -95,8 +95,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 color: Colors.green, shape: BoxShape.circle),
           ),
           Container(
-            width: 100,
-            height: 100,
+            width: 50,
+            height: 50,
             child: const Icon(Icons.camera),
             decoration: const BoxDecoration(
                 color: Colors.purple, shape: BoxShape.circle),
