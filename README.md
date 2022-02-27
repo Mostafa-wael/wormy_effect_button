@@ -1,5 +1,6 @@
 # WormyEffectButton
-![logo](logo.png)
+<img src="logo.png" alt="drawing" width="200"/>
+
 [![pub package](https://img.shields.io/pub/v/wormy_effect_button.svg)](https://pub.dev/packages/wormy_effect_button)
 [![pub points](https://badges.bar/wormy_effect_button/pub%20points)](https://pub.dev/packages/wormy_effect_button/score)
 [![popularity](https://badges.bar/wormy_effect_button/popularity)](https://pub.dev/packages/wormy_effect_button/score)
