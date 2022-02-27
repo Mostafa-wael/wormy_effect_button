@@ -2,7 +2,7 @@ name: wormy_effect_button
 description: >-
   Support creating draggable widgets with wormy effect, by adding an underlying set of widgets.
   And control the dragging speed, curve style, and an onPressed function.
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/Mostafa-wael/wormy_effect_button
 
 
