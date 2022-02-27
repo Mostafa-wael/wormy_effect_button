@@ -2,12 +2,11 @@ name: wormy_effect_button
 description: Support creating draggable widgets with wormy effect, by adding an underlying set of widgets. The developer can control the dragging speed, curve style, final position, and add an onPressed function. And a lot more!
 version: 0.0.2
 homepage: https://github.com/Mostafa-wael/wormy_effect_button
-publish_to: https://pub.dev
 
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
-  flutter: ">=1.16.0"
+  flutter: ">=1.20.0"
 
 dependencies:
   flutter:
