@@ -44,6 +44,10 @@ WormyEffectButton(
       ),
     );
 ```
+## Example
+
+https://user-images.githubusercontent.com/56788883/155863104-81b4300a-ab42-4a2d-ae8d-72e68ccc8269.mp4
+
 
 ## Additional information
 
