@@ -1,5 +1,6 @@
 library wormy_effect_button;
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class WormyEffectButton extends StatefulWidget {
@@ -67,7 +68,11 @@ class _WormyEffectButtonState extends State<WormyEffectButton> {
                 padding.bottom -
                 kToolbarHeight);
       });
-    } catch (e) {}
+    } catch (e) {
+      if (kDebugMode) {
+        print(e);
+      }
+    }
   }
 
   /// Update the button position

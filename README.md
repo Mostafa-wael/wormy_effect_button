@@ -51,4 +51,4 @@ https://user-images.githubusercontent.com/56788883/155863104-81b4300a-ab42-4a2d-
 
 ## Additional information
 
-More information about how to contribute will be availabe soon!
+More information about how to contribute will be available soon!

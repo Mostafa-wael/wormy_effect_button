@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wormy_effect_button/WormyEffectButton.dart';
+import 'package:wormy_effect_button/wormy_effect_button.dart';
 
 void main() {
   runApp(const MyApp());
