@@ -15,6 +15,9 @@
 
 This Package helps you to create draggable widgets with wormy effect
 
+## Demo
+https://user-images.githubusercontent.com/56788883/156225318-facc0430-1178-4f6b-86c8-02bdc869c8c3.mp4
+
 ## Getting started
 
 You should ensure that you add the dependency in your flutter project.
@@ -51,10 +54,6 @@ WormyEffectButton(
       ),
     );
 ```
-## Example
-
-https://user-images.githubusercontent.com/56788883/155863104-81b4300a-ab42-4a2d-ae8d-72e68ccc8269.mp4
-
 
 ## Additional information
 
