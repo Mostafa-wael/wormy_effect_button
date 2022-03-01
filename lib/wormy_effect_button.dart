@@ -46,6 +46,7 @@ class _WormyEffectButtonState extends State<WormyEffectButton> {
   late Offset _offset;
   late Offset _minOffset;
   late Offset _maxOffset;
+  bool hide= true;
 
   /// set the initial offset of the button
   @override
@@ -79,6 +80,9 @@ class _WormyEffectButtonState extends State<WormyEffectButton> {
   void _updatePosition(
     PointerEvent pointerMoveEvent,
   ) {
+    setState(() {
+      hide=false;
+    });
     var newOffsetX = _offset.dx + pointerMoveEvent.delta.dx;
     var newOffsetY = _offset.dy + pointerMoveEvent.delta.dy;
 
@@ -108,12 +112,17 @@ class _WormyEffectButtonState extends State<WormyEffectButton> {
     for (var i = len - 1; i >= 0; i--) {
       children.add(
         AnimatedPositioned(
-          curve: widget.curve,
+          curve: Curves.linearToEaseOut,
           left: _offset.dx,
           top: _offset.dy,
+          onEnd: () {
+            setState(() {
+              hide=true;
+            });
+          },
           duration: Duration(
               milliseconds:
-                  i * widget.motionDelay + i * widget.motionDelay * 2),
+              (i + 5) * (i + 1) * widget.motionDelay~/4 - i * widget.motionDelay + 50),
           child: Listener(
             onPointerMove: (PointerEvent details) {
               _updatePosition(details);
@@ -147,8 +156,7 @@ class _WormyEffectButtonState extends State<WormyEffectButton> {
                   ? true
                   : (i == 0 // the top widget
                       || // if we are not holding positions, show me unless I reach the initial position
-                      (!widget.holdPosition &&
-                          _offset != widget.initialOffset)),
+                      (!hide)),
             ),
           ),
         ),
