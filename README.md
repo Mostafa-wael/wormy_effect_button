@@ -30,12 +30,13 @@ dependencies:
 ```dart
 import 'package:wormy_effect_button/wormy_effect_button.dart';
 WormyEffectButton(
-        onPressed: _incrementCounter,
-        initialOffset: const Offset(340, 610),
-        holdPosition: false,
-        curve: Curves.fastLinearToSlowEaseIn,
-        motionDelay: 400,
-        children: [
+        onPressed: _incrementCounter, // the onPressed function
+        initialOffset: const Offset(340, 610), // the initial offset of the button
+        holdPosition: false, // indicates whether the button will return back to its initial offset or not
+        hideUnderlying: false, // hide the underlying widgets in the static condition
+        curve: Curves.fastLinearToSlowEaseIn, // the way that the widgets animates
+        motionDelay: 400, // the delay between the movement of the underlying widgets
+        children: [ // the underlying widgets that will be animated
           Container(
             width: 50,
             height: 50,
