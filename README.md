@@ -23,7 +23,7 @@ https://user-images.githubusercontent.com/56788883/156225318-facc0430-1178-4f6b-
 You should ensure that you add the dependency in your flutter project.
 ```yaml
 dependencies:
-  wormy_effect_button: "^0.0.1"
+  wormy_effect_button: "^0.0.4"
 ```
 ## Usage
 

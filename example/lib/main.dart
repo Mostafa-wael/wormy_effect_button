@@ -59,10 +59,11 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: WormyEffectButton(
-        initialOffset: Offset(MediaQuery.of(context).size.width-60, MediaQuery.of(context).size.height-60),
+        initialOffset: Offset(MediaQuery.of(context).size.width - 60,
+            MediaQuery.of(context).size.height - 60),
         onPressed: _incrementCounter,
         holdPosition: false,
-        hideUnderlying: false,
+        hideUnderlying: true,
         curve: Curves.fastLinearToSlowEaseIn,
         motionDelay: 250,
         children: [
@@ -70,7 +71,8 @@ class _MyHomePageState extends State<MyHomePage> {
             width: 50,
             height: 50,
             child: const Icon(Icons.camera),
-            decoration: const BoxDecoration(color: Colors.blue, shape: BoxShape.circle),
+            decoration:
+                const BoxDecoration(color: Colors.blue, shape: BoxShape.circle),
           ),
           Container(
             width: 50,
